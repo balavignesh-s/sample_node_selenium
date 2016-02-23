@@ -10,5 +10,6 @@ services:
   - selenium
 
 before_script:
-  - "export DISPLAY=:99.0"
-  - "/etc/init.d/xvfb start"
+  - export DISPLAY=:99.0
+  - sudo npm install
+  - xvfb-run --server-args="-ac" npm test
