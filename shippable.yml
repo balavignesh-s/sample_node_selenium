@@ -6,3 +6,7 @@ services:
   - selenium
 script:
   - xvfb-run --server-args="-ac" npm test
+integrations:
+ hub:
+   - integrationName: ship-docker
+     type: docker
