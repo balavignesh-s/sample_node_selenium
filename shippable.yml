@@ -1,25 +1,8 @@
+build_image: drydock/u14nodpls:prod
 language: node_js
-
 node_js:
   - "0.10"
-build:
-  pre_ci_boot:
-    image_name: drydock/u14nodpls
-    image_tag: prod
-    pull: true
-  ci:
-  - docker pull drydock/u14nodpls:prod
-  - ls -al
-
-  on_failure:
-    - echo "The job failed!!!!!"
-               
-  on_success:
-    - echo "The job succeeded!!!!"
-
 services:
   - selenium
-
 script:
-  - sudo npm install
   - xvfb-run --server-args="-ac" npm test
