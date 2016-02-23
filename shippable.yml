@@ -4,11 +4,11 @@ node_js:
   - "0.10"
 build:
   pre_ci_boot:
-    image_name: drydock/u12nodpls
+    image_name: drydock/u12nodall
     image_tag: prod
     pull: true
   ci:
-  - docker pull drydock/u12nodpls:prod
+  - docker pull drydock/u12nodall:prod
   - ls -al
 
   on_failure:
